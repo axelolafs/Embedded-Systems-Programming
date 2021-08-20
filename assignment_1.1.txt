@@ -1,0 +1,12 @@
+Memory footprint of 1000 size array of various typesize
+
+int: 2000/2048 bytes
+int8_t: 1000/2048 bytes
+int16_t: 2000/2048 bytes
+int32_t: 4000/2048 bytes
+int64_t 8000/2048 bytes
+
+The processor memory is exceeded for 32bit integers and larger.
+We can infer that the compiler allocates 2 bytes to a int type, since it uses the same amount of memory as a 16bit integer
+and it takes 2000 bytes to store 1000 integers, 2000 bytes/1000 integers = 2byte/integer.
+
