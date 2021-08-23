@@ -1,12 +1,12 @@
 #include <stdint.h>
 
-int main(){
+int arr[1000] = {};
 
-  int* arr = new int[1000];
-  
-  // for (int i = 0; i < 1000; i++){
-  //   arr[i] = 0;
-  // }
-  delete arr;
+int main(){
+  // int arr[1000] = {};
+  // const int arr[1000] = {};
+  // int* arr = new int[1000];
+  int p = arr[999];
+  // delete arr;
   return 0;
 }

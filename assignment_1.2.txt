@@ -1,0 +1,22 @@
+Dynamically allocated.
+RAM:   [          ]   0.5% (used 10 bytes from 2048 bytes)
+Flash: [          ]   3.2% (used 972 bytes from 30720 bytes)
+
+Constant.
+RAM:   [          ]   0.0% (used 0 bytes from 2048 bytes)
+Flash: [          ]   0.7% (used 224 bytes from 30720 bytes)
+
+Static local.
+RAM:   [          ]   0.0% (used 0 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 198 bytes from 30720 bytes)
+
+Local.
+RAM:   [          ]   0.0% (used 0 bytes from 2048 bytes)
+Flash: [          ]   0.7% (used 224 bytes from 30720 bytes)
+
+Global.
+RAM:   [==========]  97.7% (used 2000 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 184 bytes from 30720 bytes)
+
+There seems to be a large discrepancy between the flash memory usage of dynamically allocated memory and the rest.
+I suspect the difference in RAM for Global and the rest is because the compiler makes some optimization in all the other cases.

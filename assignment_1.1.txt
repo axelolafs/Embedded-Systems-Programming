@@ -1,10 +1,24 @@
 Memory footprint of 1000 size array of various typesize
 
-int: 2000/2048 bytes
-int8_t: 1000/2048 bytes
-int16_t: 2000/2048 bytes
-int32_t: 4000/2048 bytes
-int64_t 8000/2048 bytes
+int:
+RAM:   [==========]  97.7% (used 2000 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 174 bytes from 30720 bytes)
+
+int8_t:
+RAM:   [=====     ]  48.8% (used 1000 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 170 bytes from 30720 bytes)
+
+int16_t:
+RAM:   [==========]  97.7% (used 2000 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 174 bytes from 30720 bytes)
+
+int32_t:
+RAM:   [==========]  195.3% (used 4000 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 182 bytes from 30720 bytes)
+
+int64_t:
+RAM:   [==========]  390.6% (used 8000 bytes from 2048 bytes)
+Flash: [          ]   0.6% (used 198 bytes from 30720 bytes)
 
 The processor memory is exceeded for 32bit integers and larger.
 We can infer that the compiler allocates 2 bytes to a int type, since it uses the same amount of memory as a 16bit integer
