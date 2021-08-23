@@ -1,0 +1,3 @@
+Memory used for program
+RAM:   [          ]   0.0% (used 0 bytes from 2048 bytes)
+Flash: [          ]   0.5% (used 164 bytes from 30720 bytes)
