@@ -7,7 +7,7 @@ Digital_out::Digital_out(int pinNumber)
 
 void Digital_out::init()
 {
-    DDRB = (1 << pinMask);
+    DDRB |= (1 << pinMask);
 }
 
 void Digital_out::set_hi()

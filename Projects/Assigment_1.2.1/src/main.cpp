@@ -16,6 +16,7 @@ int main()
 */
 
 // Implementation for part 2
+/*
 #include <util/delay.h>
 #include "digital_out.h"
 
@@ -29,4 +30,23 @@ int main()
         output.toggle();
         _delay_ms(500);
     }
+}
+*/
+
+#include <util/delay.h>
+#include "digital_out.h"
+#include "Digital_in.h"
+
+int main(){
+  Digital_out LED(0);
+  Digital_in BUTTON(1);
+  
+  while(true){
+    _delay_ms(75);
+    if(BUTTON.is_lo())
+    {
+      LED.set_lo();
+    }
+    else LED.toggle();
+  }
 }

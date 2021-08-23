@@ -1,0 +1,31 @@
+#include "digital_in.h"
+
+Digital_in::Digital_in(int pinNumber)
+{
+    pinMask = pinNumber;
+}
+
+// Enables selected pin on PORTB as input and pulls it up.
+void Digital_in::init()
+{
+    DDRB |= (1 << pinMask);
+    PORTB |= (1 << pinMask);
+}
+
+bool Digital_in::is_hi()
+{
+    if(PINB && (1 << pinMask))
+    {
+        return true;
+    }
+    return false;
+}
+
+bool Digital_in::is_lo()
+{
+    if(PINB && (1 << pinMask))
+    {
+        return false;
+    }
+    return true;
+}

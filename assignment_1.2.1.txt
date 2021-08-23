@@ -1,3 +1,12 @@
-Memory used for program
+Part 1
+Memory used for program without class definition
 RAM:   [          ]   0.0% (used 0 bytes from 2048 bytes)
 Flash: [          ]   0.5% (used 164 bytes from 30720 bytes)
+
+Part 2
+Memory used for program with driver implementation
+RAM:   [          ]   0.0% (used 0 bytes from 2048 bytes)
+Flash: [          ]   0.5% (used 160 bytes from 30720 bytes)
+
+Seems like there is a marginally smaller footprint with a driver which seems strange.
+
