@@ -4,10 +4,10 @@
 Digital_out LED(0);
 
 int main(){
-  Timer1_sec timer(5);
+  Timer1_sec timer(20);
   timer.init();
   LED.init();
-  timer.dutyCycle(80);
+  timer.dutyCycle(10);
 
   while(true){
   }
