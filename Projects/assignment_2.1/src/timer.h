@@ -6,8 +6,11 @@
 class Timer1_sec
 {
     public:
-        Timer1_sec();
-        void init(int sec);
+        Timer1_sec(int msec);
+        void init();
+        void dutyCycle(int pct);
+    private:
+        int compareReg;
 };
 
 

@@ -2,3 +2,7 @@ Part 1
 
 What would you have to change to make the init function accept an interval in milliseconds?
 Scale down the output compare register by a factor of 1000.
+
+Part 2
+
+The intensity of the LED varies by lowering when the duty cycle is lowered, and increasing when its increased.

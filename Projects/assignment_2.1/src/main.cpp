@@ -1,12 +1,13 @@
 #include "timer.h"
 #include "digital_out.h"
 
-Digital_out LED(5);
+Digital_out LED(0);
 
 int main(){
-  Timer1_sec timer;
-  timer.init(4);
+  Timer1_sec timer(5);
+  timer.init();
   LED.init();
+  timer.dutyCycle(80);
 
   while(true){
   }
@@ -15,5 +16,9 @@ int main(){
 }
 
 ISR(TIMER1_COMPA_vect){
-    LED.toggle();
+    LED.set_hi();
+}
+
+ISR(TIMER1_COMPB_vect){
+    LED.set_lo();
 }
