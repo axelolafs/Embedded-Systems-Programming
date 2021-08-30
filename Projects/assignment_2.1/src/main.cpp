@@ -1,9 +1,19 @@
-#include <Arduino.h>
+#include "timer.h"
+#include "digital_out.h"
 
-void setup() {
-  // put your setup code here, to run once:
+Digital_out LED(5);
+
+int main(){
+  Timer1_sec timer;
+  timer.init(4);
+  LED.init();
+
+  while(true){
+  }
+
+  return 0;
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+ISR(TIMER1_COMPA_vect){
+    LED.toggle();
 }
