@@ -46,12 +46,12 @@ int main()
     /* Spawn led blink thread */
     thrd_spawn(led_blink_task,
                 NULL,
-                0,
+                1,
                 blink_task_stack,
                 sizeof(blink_task_stack));
 
     while(1){
-        thrd_sleep_us(1000);
+        thrd_sleep_ms(10000);
     }
     return (0);
 }

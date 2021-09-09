@@ -12,6 +12,15 @@ Cannot see any degredation in performance
 
 Part 2
 * The LED doesn't blink because as the thread sleeps, the main programs continues to run and when its returned the program ends.
-* The LED blinks because...
 
-* 
+* The LED doesn't blink because as the thread sleeps, the main program enters the infinite loop which is blocking and doesn't allow the OS to return to the task.
+
+* Changing the priority doesn't seem to have an effect.
+
+* The LED blinks because now the loop isn't blocking and the OS has time to serve the threads.
+
+* Seems that the scheduler is preemptive as the system reads other bits of code as it is sleeping.
+
+* Memory size: The RAM memory is approximately 300 bytes larger, largely due to the fact that 256 bytes are allocated to the thread that runs the blinking task.
+RAM:   [======    ]  63.4% (used 1298 bytes from 2048 bytes)
+Flash: [=====     ]  46.1% (used 14152 bytes from 30720 bytes)
