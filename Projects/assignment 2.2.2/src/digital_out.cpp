@@ -8,12 +8,12 @@ Digital_out::Digital_out(int pinNumber)
 
 void Digital_out::init()
 {
-    DDRB = pinMask;
+    DDRB |= pinMask;
 }
 
 void Digital_out::set_hi()
 {
-    PORTB = pinMask;
+    PORTB |= pinMask;
 }
 
 void Digital_out::set_lo()
@@ -23,5 +23,5 @@ void Digital_out::set_lo()
 
 void Digital_out::toggle()
 {
-    PORTB = PORTB ^ pinMask;
+    PORTB ^= pinMask;
 }
