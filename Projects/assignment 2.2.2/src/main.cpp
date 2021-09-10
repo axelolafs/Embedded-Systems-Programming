@@ -32,7 +32,7 @@ void* led_blink_task(void* arg_p){
 
     while(1){
         /* Wait half a second. */
-        thrd_sleep_us(500000);
+        // thrd_sleep_us(500000);
 
         /* Toggle the LED on/off. */
         sem_take(&sem_button, NULL);
@@ -47,10 +47,10 @@ void* button_read_task(void* arg_p){
     while(1){
         /* Wait 50 ms */
         stateInit = BUTTON.is_lo();
-        thrd_sleep_ms(50);
+        thrd_sleep_ms(20);
         
         /* Read button push */
-        if(BUTTON.is_lo() && (stateInit == true)){
+        if(BUTTON.is_lo() && (stateInit == false)){
             sem_give(&sem_button, 1);
         }
     }
