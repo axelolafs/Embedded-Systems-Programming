@@ -1,4 +1,5 @@
 @startuml trafficlight
+[*] --> Redlight 
 Redlight --> Greenlight : Go
 Redlight --> Redlight : Stop
 Yellowlight --> Redlight : timeout
