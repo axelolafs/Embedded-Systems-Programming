@@ -1,0 +1,10 @@
+@startuml trafficlight
+Redlight --> Greenlight : Go
+Redlight --> Redlight : Stop
+Yellowlight --> Redlight : timeout
+Yellowlight --> Yellowlight : Go
+Yellowlight --> Yellowlight : Stop
+Greenlight --> Yellowlight : Stop
+Greenlight --> Greenlight : Go
+
+@enduml
