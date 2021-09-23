@@ -12,14 +12,14 @@ void Fifo::put(int item){
 
 }
 
-bool is_empty(){
+bool Fifo::is_empty(){
     return false;
 }
 
-bool is_full(){
+bool Fifo::is_full(){
     return false;
 }
 
-void reset(){
+void Fifo::reset(){
 
 }
