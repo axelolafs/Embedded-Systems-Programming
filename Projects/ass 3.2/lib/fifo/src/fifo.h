@@ -14,6 +14,8 @@ public:
     void reset();
 private:
     int buffer[FIFO_SIZE];
+    int* head = &buffer[0];
+    int* tail = &buffer[0];
     // add variables pointing to the front and back of the buffer
 };
 
