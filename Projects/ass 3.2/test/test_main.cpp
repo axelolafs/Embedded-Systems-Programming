@@ -91,10 +91,13 @@ int main()
     _delay_ms(2000);
 
     UNITY_BEGIN(); // IMPORTANT LINE!
-
-    RUN_TEST(test_reset);
+    
+    
     RUN_TEST(test_normal_flow);
     RUN_TEST(test_underflow);
+    RUN_TEST(test_reset);
+    RUN_TEST(test_overflow);
+    RUN_TEST(test_overwrite);
     // Add more unit tests here
 
     UNITY_END(); // stop unit testing
