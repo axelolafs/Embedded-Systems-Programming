@@ -6,30 +6,32 @@ Fifo::Fifo(){
 
 int Fifo::get(){
 
-    int front = buffer[0];
-    tail--;
-    for (int i = 0; i < tail - head; i++){
-        buffer[i] = buffer[i + 1];
-    }
-    
-
+    int front = *head;
+    head++;
+    bufferLength--;
     return front;
 }
 
 void Fifo::put(int item){
-    int pos = tail - head;
+    *tail = item;
     tail++;
-    buffer[pos] = item;
+    if (tail == &buffer[0] + FIFO_SIZE){
+        tail = &buffer[0];
+    }
+    if (bufferLength < FIFO_SIZE){
+        bufferLength++;
+    }
 }
 
 bool Fifo::is_empty(){
-    return head == tail;
+    return bufferLength == 0;
 }
 
 bool Fifo::is_full(){
-    return tail >= head + FIFO_SIZE - 1;
+    return bufferLength >= FIFO_SIZE;
 }
 
 void Fifo::reset(){
     tail = head;
+    bufferLength = 0;
 }
