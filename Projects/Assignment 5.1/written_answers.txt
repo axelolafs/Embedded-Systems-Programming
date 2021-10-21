@@ -1,0 +1,16 @@
+Part 1.
+
+
+    Check the symbol rate using the stty command (L5.4).  What is the current value?
+	baud rate: 38400
+    In minicom, lower the baud to the lowest available setting.  Do you notice a difference in the response?
+	I could not notice a difference, I tried going to a baud rate of 300.
+    Enable local echo using CTRL-A E.  Type some characters and copy the output for submission.  Does the output depend on how fast you type?
+	HHeelllloo  tteerrmmiinnaall,,  II  aamm  AAxxeell..
+	Sometimes when typing fast, the next character I type comes before the echo.
+    Close minicom and check the symbol rate again.  What is the value now?
+	speed 9600 baud; rows 0; columns 0; line = 0;
+	So the baud rate is now 9600.
+
+
+
