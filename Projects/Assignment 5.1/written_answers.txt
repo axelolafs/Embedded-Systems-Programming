@@ -31,19 +31,17 @@ Part 2.
     In your program, set the symbol rate to 57600 baud and the frame format to 8-n-1.
     Check the port settings after your program finishes.  Comment on the changes.
 	Using stty, I observe that the baud rate is now 57600.
-	
-Sample output: 	sampleoutput
-		The following was read in [20]: sampleoutput
-		output2
-		The following was read in [20]: output2
 
 Part 3.
 
     Do you obtain a response by typing any single character?
-	I get a response every other character, I do not understand why.
+	Yes!
     Set the frame format to 8-e-2.
     Store the initial port settings and reset them at the end of your program.
     Using stty, check the settings before and after running your program.
+	The settings were same before and after.
+
+	sample output: HHeelllloo  tetrermmiinnaall!!
 
 
 
