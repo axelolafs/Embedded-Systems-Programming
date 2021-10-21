@@ -37,6 +37,15 @@ Sample output: 	sampleoutput
 		output2
 		The following was read in [20]: output2
 
+Part 3.
+
+    Do you obtain a response by typing any single character?
+	I get a response every other character, I do not understand why.
+    Set the frame format to 8-e-2.
+    Store the initial port settings and reset them at the end of your program.
+    Using stty, check the settings before and after running your program.
+
+
 
 
 
