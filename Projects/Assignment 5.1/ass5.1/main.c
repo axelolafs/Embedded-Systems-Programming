@@ -16,13 +16,22 @@ int main(){
 
    // Set up the communications options:
    // 115200 baud, 8-bit, enable receiver, no modem control lines
-   options.c_cflag = B115200 | CS8 | CREAD | CLOCAL;
+   options.c_cflag = B57600 | CS8 | CREAD | CLOCAL;
    options.c_iflag = IGNPAR | ICRNL;   // ignore partity errors
-   options.c_lflag |= ICANON;
    tcflush(file, TCIFLUSH);            // discard file information
    tcsetattr(file, TCSANOW, &options); // changes occur immmediately
 
-   unsigned char transmit[20] = "Hello Raspberry Pi!";  // send string
+    char str[20];
+    unsigned char recv[100];
+    int cnt;
+    while(1){
+        scanf("%s", str);
+        write(file, &str, 20);
+        usleep(100000);
+        cnt = read(file, (void*)recv, 100);
+        printf("The following was read in [%d]: %s\n", cnt, recv);
+    }
+   unsigned char transmit[20] = "Hello Raspberry Pi!\n";  // send string
 
    if ((count = write(file, &transmit, 20))<0){         // transmit
       perror("Failed to write to the output\n");

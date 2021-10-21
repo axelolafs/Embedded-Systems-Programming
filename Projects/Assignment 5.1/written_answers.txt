@@ -12,5 +12,35 @@ Part 1.
 	speed 9600 baud; rows 0; columns 0; line = 0;
 	So the baud rate is now 9600.
 
+Part 2.
+
+	The following was run with minicom open in another terminal.
+
+    Try running the code given below.  What is the output? 
+	The following was read in [20]: Hello Raspberry Pi!
+    Now add a newline character \n to the end of the string.  How does the output change?  Explain.
+	The following was read in [20]: Hello Raspberry Pi!
+
+	The output doesnt change except there is a newline in the second case which I suspect is some error,
+	I think what is supposed to happen is that the message shouldn't be read without the \n character but there is
+	an implied stopbit in the string.
+
+
+    Do you obtain a response by typing any single character?
+	No, with canonical mode I have to press the enter button to get a response.
+    In your program, set the symbol rate to 57600 baud and the frame format to 8-n-1.
+    Check the port settings after your program finishes.  Comment on the changes.
+	Using stty, I observe that the baud rate is now 57600.
+	
+Sample output: 	sampleoutput
+		The following was read in [20]: sampleoutput
+		output2
+		The following was read in [20]: output2
+
+
+
+
+
+
 
 
