@@ -15,10 +15,10 @@ void loop() {              // loops forever
    String command;
    char buffer[100];       // stores the return buffer on each loop   
    if (Serial.available()>0){                 // bytes received
-      command = Serial.readStringUntil('\0'); // C strings end with \0
-      if(command.substring(0,4) == "LED "){   // begins with "LED "?
-         String intString = command.substring(4, command.length());
-         int level = intString.toInt();       // extract the int
+      Serial.readBytes(buffer, 2); // read 2 bytes and place into buffer
+      if(buffer[0] == 2){   // has register 2 selected?
+         uint8_t level = buffer[1];
+        //  int level = atoi(intString);       // extract the int
          if(level>=0 && level<=255){          // is it in range?
             analogWrite(ledPin, level);       // yes, write out
             sprintf(buffer, "Set brightness to %d", level);
@@ -28,7 +28,7 @@ void loop() {              // loops forever
          } 
       }                                       // otherwise, unknown cmd
       else{ sprintf(buffer, "Unknown command: %s", command.c_str()); }
-      Serial.print(buffer);               // send the buffer to the RPi
+      Serial.println(buffer);               // send the buffer to the RPi
    }
 }
 
