@@ -11,7 +11,7 @@
 #include <semaphore.h> 
 #include <stdint.h>
 
-#define SHM_SEGMENT_SIZE 256
+#define SHM_SEGMENT_SIZE 1
 
 #define SHM_SEGMENT_NAME "/demo-shm" 
 #define SEMA_NAME "/demo-sem" 
