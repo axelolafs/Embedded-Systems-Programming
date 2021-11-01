@@ -5,10 +5,11 @@ int main(){
     int i = 0;
     char buffer[10];
     while(true){
+        sleep(1);
         i++;
         sprintf(buffer, "%d\n", i);
         std::cout << buffer;
-        sleep(1);
+        std::cout.flush();
     }
     return 0;
 }
