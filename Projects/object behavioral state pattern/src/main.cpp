@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <string.h>
 
 class Context;
 
@@ -12,13 +13,14 @@ class State {
  public:
   virtual ~State() {
   }
-
   void set_context(Context *context) {
     this->context_ = context;
   }
 
   virtual void HandleStop() = 0;
   virtual void HandleGo() = 0;
+  virtual void Entry() = 0;
+
 };
 
 /**
@@ -40,6 +42,8 @@ class Context {
   ~Context() {
     delete state_;
   }
+  
+ 
   /**
    * The Context allows changing the State object at runtime.
    */
@@ -48,6 +52,7 @@ class Context {
       delete this->state_;
     this->state_ = state;
     this->state_->set_context(this);
+    this->state_->Entry();
   }
   /**
    * The Context delegates part of its behavior to the current State object.
@@ -72,7 +77,7 @@ class Red : public State {
   }
   
   void HandleGo() override;
-  
+  void Entry() override{};
 };
 
 class Green : public State {
@@ -81,6 +86,7 @@ class Green : public State {
   void HandleGo() override {
     Serial.println("Green -> Green");
   }
+  void Entry() override{};
 };
 
 class Yellow : public State {
@@ -90,6 +96,12 @@ class Yellow : public State {
   }
   void HandleGo() override {
     Serial.println("Yellow -> Yellow");
+  }
+  void Entry() override {
+    // Serial.println("Green -> Yellow");
+    _delay_ms(2000);
+    Serial.println("Yellow -> Red");
+    this->context_->TransitionTo(new Red);
   }
 };
 
@@ -130,7 +142,8 @@ void streetlights() {
 int main() {
   init();
   Serial.begin(9600);
-
+  char paddo[10] = "ass" + "or pass";
+  Serial.println("ass" + "or pass");
   streetlights();
   return 0;
 }
